@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第二节课</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #box{
+            margin:50px auto;
+            width:500px;
+
+        }
+        #text{
+            width: 480px;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius:5px;
+        }
+    
+    #list{
+        margin-top:10px;
+        width:500px;
+        height:35px;
+        line-height:35px;
+        border-bottom:1px solid #ddd;
+
+    }
+    img{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+    }
+    #btn{
+        float:right;
+        width:70px;
+        height:30px;
+        line-height: 30px;
+        text-align:center;
+        background-color:#ddd;
+        font-size:14px;
+
+
+    }
+    li{
+        width:500px;
+        height:30px;
+        border-bottom:1px solid #ddd;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="text" contenteditable="true"></div>
+        <div id="list">
+            <img src="1.jpg" alt="">
+            <button id="btn">提交</button>
+        </div>
+        <ul id="u-box">
+
+        </ul>
+    </div>
+    <script>
+    
+        let text = document.getElementById("text"),
+            btn = document.getElementById("btn"),
+            li = document.getElementById("u-box");
+        //  let  li.inneriHTML = "<li></li>";
+        // es5标准
+            // btn.onclick = function (){
+            //   li.innerHTML +="<li>"+text.innerHTML+"</li>"
+            //   text.innerHTML = "";
+            // }
+    
+    // es6模板字符串`` 中间加${}
+     btn.onclick = function (){
+         li.innerHTML += `<li> ${text.innerHTML} </li>`;
+         text.innerHTML = ""
+        
+     }
+    
+    
+    </script>
+</body>
+</html>
